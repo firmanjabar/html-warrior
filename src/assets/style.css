@@ -8,7 +8,6 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-
 }
 
 /* .clear:after {
@@ -27,22 +26,41 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: all 0.5s ease;
+    border-radius: 6%;
 }
 
-/* .button_default:hover {
-    background: #ffffff;
-    color: #000000;
-} */
 
-/* .small_link {
-    font-size: 12px;
-    background: #F44336;
-} */
+.small_link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #ababab;
+    background: none;
+    text-transform: capitalize;
+}
+
+.medium_link {
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(#271a3a, #191223);
+    text-transform: uppercase;
+    border-radius: 5%;
+}
 
 .button_default:hover {
     background: rgb(9, 92, 85);
     color: #fff;
     text-decoration: none;
+}
+
+.small:hover {
+    background: none;
+    color: #fff;
+}
+
+.medium:hover {
+    background: #353535;
+    color: #fff;
 }
 
 /*================================
@@ -97,6 +115,7 @@ footer {
     background: #1b1b1b;
     color: #ffffff;
     padding: 10px;
+    margin-top: 1%;
 }
 
 footer .logo {
@@ -152,19 +171,26 @@ footer .detailAuthor {
     line-height: 50px;
 }
 
-/* .home_container {
+.home_container {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.block {
+    height: 420px;
+    background: #1b1b1b;
+    padding: 10px;
+    overflow: auto;
 }
 
 .home_container .md-card {
     box-sizing: border-box;
-    margin-bottom: 10px;
-    width: calc(1/3*100% - (1 - 1/3)*10px);
-} */
+    padding: 10px 60px;
+}
 
 /*================================
                 sign in
@@ -399,5 +425,20 @@ button {
         color: #ffffff;
         position: absolute;
         bottom: 90px;
+    }
+
+    .block {
+        height: 970px;
+        overflow: auto;
+    }
+
+    .home_container .md-card {
+        padding: 10px 45px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home_container .md-card {
+        padding: 10px 30px;
     }
 }

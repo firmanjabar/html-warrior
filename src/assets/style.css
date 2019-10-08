@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .container {
@@ -38,6 +38,13 @@ body {
     text-transform: capitalize;
 }
 
+.nav_link {
+    text-decoration: none;
+    color: #ababab;
+    background: none;
+    text-transform: capitalize;
+}
+
 .logo_link {
     text-decoration: none;
     color: #fff;
@@ -67,6 +74,12 @@ body {
     color: #fff;
 }
 
+.nav:hover {
+    background: none;
+    color: #fff;
+    text-decoration: none;
+}
+
 .medium:hover {
     background: #ababab;
     color: #fff;
@@ -80,11 +93,11 @@ body {
     color: white;
     width: 100%;
 }
-
+ */
 
 header .header_container {
     padding: 0px 0px;
-} */
+}
 
 .logo {
     flex-grow: 1;
@@ -95,28 +108,28 @@ header .header_container {
 /* header .header_container .logo a {
     text-decoration: none;
     color: #ffffff;
-}
+} */
 
 header ul {
     margin: 0px;
 }
 
 header ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 10px;
-    font-size: 20px;
 }
 
-header ul li a {
+/* header ul li a {
     color: #ffffff;
     text-decoration: none;
-}
+} */
 
+/* 
 header ul li a:hover {
     text-decoration: none !important;
-}
+} */
 
-header ul li span {
+/* header ul li span {
     cursor: pointer;
 } */
 
@@ -484,6 +497,10 @@ footer .detailAuthor {
     .btnfull {
         font-size: 15px;
     }
+
+    header ul li {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -492,7 +509,7 @@ footer .detailAuthor {
     }
 }
 
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1023px) {
     .signin_container {
         padding-top: 100px;
         height: 75vh;
@@ -523,5 +540,9 @@ footer .detailAuthor {
 
     .btnfull {
         font-size: 40px;
+    }
+
+    header ul li {
+        display: block;
     }
 }

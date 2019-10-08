@@ -40,8 +40,8 @@ export default {
     return {
       error: false,
       formdata: {
-        email: "",
-        password: ""
+        email: "firmanabduljabar@gmail.com",
+        password: "skripsi"
       }
     };
   },

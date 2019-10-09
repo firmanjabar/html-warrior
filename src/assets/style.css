@@ -45,6 +45,14 @@ body {
     text-transform: capitalize;
 }
 
+.dash_link {
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    text-transform: capitalize;
+    text-align: center;
+}
+
 .logo_link {
     text-decoration: none;
     color: #fff;
@@ -75,6 +83,12 @@ body {
 }
 
 .nav:hover {
+    background: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dash:hover {
     background: none;
     color: #fff;
     text-decoration: none;
@@ -207,6 +221,15 @@ footer .detailAuthor {
     background: #1b1b1b;
     padding: 10px;
     overflow: auto;
+}
+
+.block_static {
+    height: 3px;
+    background: #1b1b1b;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .home_container .md-card {
@@ -350,11 +373,11 @@ footer .detailAuthor {
            DASHBOARD
 ==================================*/
 
-/* .dashboard_container {
-    padding-top: 82px;
+.dashboard_container {
     min-height: 90vh;
 }
 
+/* 
 .dashboard_container .admin_nav {
     border-bottom: 3px solid #6e6e6e;
     margin-bottom: 20px;
@@ -496,6 +519,10 @@ footer .detailAuthor {
 
     .btnfull {
         font-size: 15px;
+    }
+
+    .center {
+        width: 100%;
     }
 
     header ul li {

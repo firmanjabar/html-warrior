@@ -265,7 +265,6 @@ footer .detailAuthor {
 
 .input_field input {
     width: 100%;
-    font-size: 20px;
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #dbdbdb;
@@ -273,14 +272,14 @@ footer .detailAuthor {
     padding: 10px;
 }
 
-/* .dashboard_form {
-    width: 560px;
+.dashboard_form {
+    width: 100%;
     margin-bottom: 100px;
 }
 
 .dashboard_form .input_field input {
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #dbdbdb;
@@ -288,6 +287,7 @@ footer .detailAuthor {
     padding: 10px;
 }
 
+/*
 .dashboard_form .input_field select {
     width: 100%;
     font-size: 20px;

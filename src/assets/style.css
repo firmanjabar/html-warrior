@@ -45,6 +45,14 @@ body {
     text-transform: capitalize;
 }
 
+.dash_link {
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    text-transform: capitalize;
+    text-align: center;
+}
+
 .logo_link {
     text-decoration: none;
     color: #fff;
@@ -75,6 +83,12 @@ body {
 }
 
 .nav:hover {
+    background: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dash:hover {
     background: none;
     color: #fff;
     text-decoration: none;
@@ -209,6 +223,15 @@ footer .detailAuthor {
     overflow: auto;
 }
 
+.block_static {
+    height: 3px;
+    background: #1b1b1b;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .home_container .md-card {
     box-sizing: border-box;
     padding: 10px 60px;
@@ -242,7 +265,6 @@ footer .detailAuthor {
 
 .input_field input {
     width: 100%;
-    font-size: 20px;
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #dbdbdb;
@@ -250,14 +272,14 @@ footer .detailAuthor {
     padding: 10px;
 }
 
-/* .dashboard_form {
-    width: 560px;
+.dashboard_form {
+    width: 100%;
     margin-bottom: 100px;
 }
 
 .dashboard_form .input_field input {
     width: 100%;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #dbdbdb;
@@ -265,6 +287,7 @@ footer .detailAuthor {
     padding: 10px;
 }
 
+/*
 .dashboard_form .input_field select {
     width: 100%;
     font-size: 20px;
@@ -350,11 +373,11 @@ footer .detailAuthor {
            DASHBOARD
 ==================================*/
 
-/* .dashboard_container {
-    padding-top: 82px;
+.dashboard_container {
     min-height: 90vh;
 }
 
+/* 
 .dashboard_container .admin_nav {
     border-bottom: 3px solid #6e6e6e;
     margin-bottom: 20px;
@@ -496,6 +519,10 @@ footer .detailAuthor {
 
     .btnfull {
         font-size: 15px;
+    }
+
+    .center {
+        width: 100%;
     }
 
     header ul li {

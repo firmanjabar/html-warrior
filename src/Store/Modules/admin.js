@@ -13,6 +13,8 @@ const admin = {
         refresh: null,
         authFailed: false,
         refreshLoading: true,
+        addpost: false,
+        adminPost: null,
     },
     getters: {
         isAuth(state) {
@@ -23,6 +25,12 @@ const admin = {
         },
         refreshLoading(state) {
             return state.refreshLoading
+        },
+        addPostStatus(state) {
+            return state.addpost
+        },
+        getAdminPost(state) {
+            return state.adminPost
         }
     },
     mutations: {
@@ -51,6 +59,15 @@ const admin = {
         },
         refreshLoading(state) {
             state.refreshLoading = false
+        },
+        addPost(state) {
+            state.addpost = true
+        },
+        clearAddPost(state) {
+            state.addpost = false
+        },
+        getAdminPost(state, posts) {
+            state.adminPost = posts
         }
     },
     actions: {
@@ -100,6 +117,50 @@ const admin = {
             } else {
                 commit("refreshLoading")
             }
+        },
+        addPost({
+            commit,
+            state
+        }, payload) {
+            Vue.http.post(`post.json?auth=${state.token}`, payload)
+                .then(response => response.json())
+                .then(response => {
+                    commit("addPost")
+                    setTimeout(() => {
+                        commit("clearAddPost")
+                    }, 5000)
+                })
+        },
+        getAdminPost({
+            commit
+        }) {
+            Vue.http.get('post.json')
+                .then(response => response.json())
+                .then(response => {
+                    const posts = []
+                    for (let key in response) {
+                        posts.push({
+                            ...response[key],
+                            id: key
+                        })
+                    }
+                    commit('getAdminPost', posts)
+                })
+        },
+        deletePost({
+            commit,
+            state
+        }, payload) {
+            Vue.http.delete(`post/${payload}.json?auth=${state.token}`)
+                .then(response => {
+                    let newPosts = []
+                    state.adminPost.forEach(post => {
+                        if (post.id != payload) {
+                            newPosts.push(post)
+                        }
+                    })
+                    commit('getAdminPost', newPosts)
+                })
         }
     }
 }

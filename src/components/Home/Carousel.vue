@@ -12,7 +12,7 @@
           <div class="gradient">
             <div class="container">
               <div class="content">
-                <app-button type="link" linkTo="/adfadfa">Get Started</app-button>
+                <app-button type="link" linkTo="/content">Get Started</app-button>
                 <div class="item">{{ slide.text }}</div>
               </div>
             </div>

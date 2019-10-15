@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './Store/store'
@@ -8,6 +9,9 @@ import Dashboard from './components/Dashboard/Index.vue'
 import MainDashboard from './components/Dashboard/Main.vue'
 import AddPost from './components/Dashboard/AddPost.vue'
 import ListPost from './components/Dashboard/ListPost.vue'
+import Content from './components/Post-Content/Index.vue'
+import MainContent from './components/Post-Content/MainContent.vue'
+import DynamicContent from './components/Post-Content/DynamicContent.vue'
 
 Vue.use(VueRouter)
 
@@ -64,7 +68,19 @@ const routes = [{
         }
     ],
     ...authGuard
-}]
+}, {
+    path: '/content',
+    component: Content,
+    children: [{
+            path: '/',
+            component: MainContent
+        },
+        {
+            path: ':id',
+            component: DynamicContent
+        }
+    ],
+}, ]
 
 export default new VueRouter({
     mode: 'history',

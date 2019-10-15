@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="dashboard_form">
     <form @submit.prevent="submitHandler">
@@ -15,11 +16,11 @@
           name="content"
         ></trumbowyg>
       </div>
-      <div class="input_field" :class="{invalid: $v.formdata.num.$error}">
+      <!-- <div class="input_field" :class="{invalid: $v.formdata.num.$error}">
         <label>Number List</label>
         <input type="text" @blur="$v.formdata.num.$touch()" v-model="formdata.num" />
       </div>
-      <p class="error_label" v-if="$v.formdata.num.$error">This input is required</p>
+      <p class="error_label" v-if="$v.formdata.num.$error">This input is required</p> -->
       <button class="button_default" type="submit">Add Post</button>
     </form>
 
@@ -32,10 +33,12 @@
         <b-button block variant="primary" class="mt-3" @click="$bvModal.hide('modal-1')">Cancel</b-button>
       </b-modal>
     </div>
+    <div v-if="addpost" class="post_succesfull">Your post was posted</div>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import { required, maxLength } from "vuelidate/lib/validators";
 
 export default {
@@ -62,6 +65,10 @@ export default {
                 "justifyFull"
               ],
               ico: "justifyLeft"
+            },
+            image: {
+              dropdown: ["insertImage", "upload"],
+              ico: "insertImage"
             }
           },
           btnsAdd: ["foreColor", "backColor"],
@@ -76,9 +83,10 @@ export default {
             ["fontfamily"],
             ["removeformat"],
             ["link"],
-            ["insertImage"],
+            ["image"],
             ["undo", "redo"],
             ["foreColor", "backColor"],
+            ["highlight"],
             ["emoji"],
             ["giphy"],
             ["preformatted"],
@@ -88,6 +96,19 @@ export default {
           plugins: {
             giphy: {
               apiKey: "FKtEG2nROoOCxIruF7KYPNhwCW31kcbn"
+            },
+            upload: {
+              serverPath: "https://api.imgur.com/3/image",
+              fileFieldName: "image",
+              headers: {
+                Authorization: "Client-ID bc0e0605bb835c1"
+              },
+              urlPropertyName: "data.link",
+              imageWidthModalEdit: true
+            },
+            resizimg: {
+              minSize: 64,
+              step: 16
             }
           }
         }
@@ -104,7 +125,24 @@ export default {
       }
     }
   },
+  computed: {
+    addpost() {
+      let status = this.$store.getters["admin/addPostStatus"];
+      if (status) {
+        this.clearPost();
+      }
+      return status;
+    }
+  },
   methods: {
+    clearPost() {
+      this.formdata = {
+        title: "",
+        content: "",
+        num: ""
+      };
+      this.$v.$reset();
+    },
     submitHandler() {
       if (!this.$v.$invalid) {
         if (this.formdata.content === "") {
@@ -121,7 +159,7 @@ export default {
       this.addPost();
     },
     addPost() {
-      console.log("add the post");
+      this.$store.dispatch("admin/addPost", this.formdata);
     }
   }
 };

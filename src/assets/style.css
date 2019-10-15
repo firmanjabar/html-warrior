@@ -5,9 +5,32 @@ body {
     /* overflow-x: hidden; */
 }
 
+.data img {
+    max-width: 90%;
+}
+
+.data iframe {
+    max-width: 100%;
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
+}
+
+.container_content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#css-table {
+    display: table;
+}
+
+#css-table .col {
+    display: table-cell;
+    width: 25%;
+    padding: 10px;
 }
 
 /* .clear:after {
@@ -34,6 +57,14 @@ body {
     font-size: 14px;
     text-decoration: none;
     color: #ababab;
+    background: none;
+    text-transform: capitalize;
+}
+
+.list_link {
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
     background: none;
     text-transform: capitalize;
 }
@@ -80,6 +111,13 @@ body {
 .small:hover {
     background: none;
     color: #fff;
+}
+
+.list_link:hover {
+    background: none;
+    color: grey;
+    border: 2px solid rgb(63, 132, 236);
+    text-decoration: none;
 }
 
 .nav:hover {
@@ -422,7 +460,7 @@ footer .detailAuthor {
 .md-table-cell {
     max-width: 290px;
 }
-
+*/
 .post_succesfull {
     font-size: 20px;
     background: #4CAF50;
@@ -432,6 +470,7 @@ footer .detailAuthor {
     margin-top: 20px;
 }
 
+/*
 .dashboard_welcome {
     height: 70vh;
     font-size: 20px;
@@ -528,13 +567,12 @@ footer .detailAuthor {
     header ul li {
         display: block;
     }
-}
 
-@media only screen and (min-width: 768px) {
-    .home_container .md-card {
-        padding: 10px 30px;
+    .dissapear {
+        display: none;
     }
 }
+
 
 @media (min-width: 600px) and (max-width: 1023px) {
     .signin_container {
@@ -571,5 +609,19 @@ footer .detailAuthor {
 
     header ul li {
         display: block;
+    }
+
+    .dissapear {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .home_container .md-card {
+        padding: 10px 30px;
+    }
+
+    .dissapear {
+        display: inline;
     }
 }

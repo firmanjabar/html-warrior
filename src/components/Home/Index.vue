@@ -1,18 +1,18 @@
 <template>
   <div style="background:#ababab">
     <comp-carousel />
-    <comp-content />
+    <comp-menu />
   </div>
 </template>
 
 <script>
 import compCarousel from "./Carousel.vue";
-import compContent from "./Content.vue";
+import compMenu from "./Menu.vue";
 
 export default {
   components: {
     compCarousel,
-    compContent
+    compMenu
   }
 };
 </script>

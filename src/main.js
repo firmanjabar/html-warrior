@@ -29,6 +29,9 @@ import "trumbowyg/dist/plugins/pasteembed/trumbowyg.pasteembed.min.js";
 import "trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js";
 import "trumbowyg/dist/plugins/preformatted/trumbowyg.preformatted.min.js";
 import "trumbowyg/dist/trumbowyg.js";
+import "trumbowyg/dist/plugins/upload/trumbowyg.upload.js";
+import "trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.css";
+import "trumbowyg/dist/plugins/highlight/trumbowyg.highlight.js";
 
 // Material Design
 Vue.use(feather, 'v-icon')
@@ -41,7 +44,18 @@ Vue.use(VueTrumbowyg)
 
 // Resource
 Vue.use(VueResource)
-Vue.http.options.root = ''
+Vue.http.options.root = 'https://htmlwarrior-8d75e.firebaseio.com'
+
+//truncate
+var filter = function (text, length, clamp) {
+  clamp = clamp || '...';
+  var node = document.createElement('div');
+  node.innerHTML = text;
+  var content = node.textContent;
+  return content.length > length ? content.slice(0, length) + clamp : content;
+};
+
+Vue.filter('truncate', filter);
 
 new Vue({
   router,

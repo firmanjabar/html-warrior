@@ -35,7 +35,7 @@
       </div>
       <b-row>
         <b-col class="text-center mt-3 mb-1">
-          <app-button type="link" linkTo="/adfadfa">Get Started</app-button>
+          <app-button type="link" linkTo="/content">Get Started</app-button>
         </b-col>
       </b-row>
       <b-row>

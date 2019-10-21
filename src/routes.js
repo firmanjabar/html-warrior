@@ -12,6 +12,7 @@ import ListPost from './components/Dashboard/ListPost.vue'
 import Content from './components/Post-Content/Index.vue'
 import MainContent from './components/Post-Content/MainContent.vue'
 import DynamicContent from './components/Post-Content/DynamicContent.vue'
+import NotFound from './components/404NF/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -80,7 +81,10 @@ const routes = [{
             component: DynamicContent
         }
     ],
-}, ]
+}, {
+    path: '*',
+    component: NotFound
+}]
 
 export default new VueRouter({
     mode: 'history',

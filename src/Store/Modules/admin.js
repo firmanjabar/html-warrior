@@ -161,6 +161,21 @@ const admin = {
                     })
                     commit('getAdminPost', newPosts)
                 })
+        },
+        updatePost({
+            commit,
+            state
+        }, payload) {
+            Vue.http.update(`post/${payload}.json?auth=${state.token}`)
+                .then(response => {
+                    let upPosts = []
+                    state.adminPost.forEach(post => {
+                        if (post.id != payload) {
+                            upPosts.push(post)
+                        }
+                    })
+                    commit('getAdminPost', upPosts)
+                })
         }
     }
 }

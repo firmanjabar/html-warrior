@@ -17,6 +17,12 @@ body {
     margin: 0 auto;
 }
 
+.nf404 {
+    width: 80%;
+    height: 580px;
+    margin-top: 20px;
+}
+
 .container_content {
     width: 90%;
     margin: 0 auto;

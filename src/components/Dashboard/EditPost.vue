@@ -1,6 +1,8 @@
 /* eslint-disable */
 <template>
   <div class="dashboard_form">
+    <h2> Edit Post </h2>
+    <hr>
     <form @submit.prevent="submitHandler">
       <div class="input_field" :class="{invalid: $v.formdata.title.$error}">
         <label>Title</label>

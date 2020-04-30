@@ -13,7 +13,7 @@
     "codemirror": "^5.49.0",
     "core-js": "^2.6.5",
     "file-loader": "^4.2.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "vue": "^2.6.10",
     "vue-carousel": "^0.18.0",
     "vue-icon": "^2.1.1",
